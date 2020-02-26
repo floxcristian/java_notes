@@ -1,6 +1,7 @@
 <h1 align="center">Apuntes de Java</h1>
 
-# Tabla de Contenido
+## Tabla de Contenido
+
 
 
 # 1. ¿Qué es Java?
@@ -16,7 +17,7 @@
     + Filosofía WORA (Write once run anywhere). Lo que aprendas en Java SE puedes llevarlo a Java EE y puede correr en cualquier SO.
 
 + **Java EE (Enterprise Edition)**
-    + Enfocado a apps web, en servidores, distribuidas
+    + Enfocado a apps web, en servidores y distribuidas.
 
 # 2. Versiones de Java y JDK
 
@@ -24,9 +25,9 @@
 
 También nombrado como SDK de Java, se compone de 3 elementos:
 
-+ **JRE (Java Runtime Etvironment):** VM de Java que permite interpretar el código en distintos SO (filosofía WORA).
-+ **Compilador Java:** traduce Java a bytecode que finalmente será interpretado por la VM de Java.
-+ **API de Desarrollo:** base de elementos, clases listos para usar.
++ **JRE (Java Runtime Environment):** VM de Java que permite interpretar el código en distintos SO (filosofía WORA).
++ **Compilador Java:** traduce Java a `Byte Code` que finalmente será interpretado por la `JVM`.
++ **API de Desarrollo:** base de elementos y clases listas para usar.
 
 ## 2.2. Versiones
 
@@ -41,10 +42,10 @@ LTS (Long Term Support / 3 years)
 
 + **OpenJDK:** 
     + versión open-source de Java SE. 
-    + disponible desde la versión 6.
+    + disponible desde Java SE 6.
     + apoyada por Red Hat.
 
-La versión 8 es la más utilizada y es la única versión LTS con licencia gratuita por parte de Oracle y con soporte hasta 2020. Y apartir de ahí el soporte se adquirirá con licencia como en la versión 11 LTS.
+La versión 8 es la más utilizada y es la única versión LTS con licencia gratuita (soporte) por parte de Oracle. Y apartir de ahí el soporte se adquirirá con licencia como en la versión 11 LTS.
 
 # 3. Herramientas 
 
@@ -68,25 +69,25 @@ ORMs:
 
 ## Entorno de Desarrollo en Windows
 
-Descargar e instalar IntelliJ IDEA.
+1. Descargar e instalar [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/).
 
-Descargar e instalar las versiones 8 y 11 LTS de [OpenJDK](https://adoptopenjdk.net).
+2. Descargar e instalar las versiones LTS 8 y 11 de [OpenJDK](https://adoptopenjdk.net).
 
-Crear un nuevo proyecto y en `Project SDK` seleccionar la versión deseada que se encuentra en el directorio `C:\Program Files\AdoptOpenJDK`.
+3. Crear un nuevo proyecto y en `Project SDK` seleccionar la versión deseada (ubicada en el directorio `C:\Program Files\AdoptOpenJDK`).
 
 # 4. Código
 
-main: punto de entrada de nuestra app en Java. Lo primero que se ejecuta cuando nuestra app corre.
+**main:** punto de entrada de nuestra app en Java. Lo primero que se ejecuta cuando nuestra app corre.
 
 ```java
 public static void main (String[] args){
-    // acciones de nuestra app
+    // acciones
 }
 ```
 
 + En external libraries podemos ver las librerías con las que estamos trabajando, incluyendo el JDK.
 + En el directorio `src` es donde creamos nuestros archivos.
-Ejemplo: New > Java Class
+Ejemplo: `New` > `Java Class`.
 
 Si escribimos `main` el IDE sugiere toda la estructura del método main.
 
@@ -100,11 +101,11 @@ Para correr la app damos click derecho y seleccionamos la opción `Run HolaMundo
 
 # Etapas de Programación en Java
 
-+ Escribimos código .java
-+ Cuando damos `run` se activa el compilador de java (javac) traduce el código java a Byte Code (archivos .class en el directorio out).
-+ La JVM interpreta el Byte Code.
++ Escribimos código `.java`.
++ Cuando ejecutamos `run` se activa el compilador de Java `javac` que traduce el código a `Byte Code`. Este `Byte Code` es almacenado en archivos `.class` en el directorio `out`.
++ La `JVM` interpreta el `Byte Code`.
 
-Java es compilado e interpretado.
+> Java es compilado e interpretado.
 
 # Variables en Java
 
@@ -112,9 +113,10 @@ Java es compilado e interpretado.
 int salary;
 String name, surname;
 ```
-No se puede inicializar una variable con un número al principio y no pueden tener guión medio
-Constantes se escriben en mayúsculas y pueden contener `_`.
-Declarar constantes:
++ No se puede inicializar una variable con un número al principio y no pueden tener guión medio.
++ Constantes se escriben en mayúsculas y pueden contener `_`.
+
+Ejemplo de declaración de constante:
 ```java
 final double PI = 3.14;
 ```
@@ -122,16 +124,19 @@ final double PI = 3.14;
 Variables estáticas o de clase
 
 
-Concatenar strings
+Concatenar strings:
+```java
 String name = "Cristian";
 name += " Flores";
+```
 
 # Nombramiento
 
-+ Upper Camel Case en clases y estas deben tener el mismo nombre que los archivos.
-+ Lower Camel Case en variables y métodos.
++ **Upper Camel Case** en clases y estas deben tener el mismo nombre que los archivos.
++ **Lower Camel Case** en variables y métodos.
 
-Variables númericas
+## Variables númericas
+
 Las variables tienen limites.
 
 byte -128 a 127 (1 bye)
@@ -143,11 +148,11 @@ Decimales
 float (4 bytes)
 double (8 bytes)
 
-tipos de datos long siempre deben tener una L al final.
++ Para especificar tipo de dato `long` se debe poner una `L` al final:
 ```java
 long longNum = 12345678901L;
 ```
-Para especificar tipo de datos float de debe especificar con una f al final
++ Para especificar tipo de dato `float` se debe poner una `F` al final:
 ```java
 float doubleNum = 123.456;
 float floatNum = 123.456F;
@@ -172,20 +177,20 @@ var intNum = 23455;
 
 ## Cast vs Parse
 
-Cast: en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
+**Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
 ```java
-// option1
+// option 1
 float num = 2.5f;
-// option2
+// option 2
 float value = (float) 2.5;
 ```
 
 **Parse:** para cambiar entre tipos. Su uso más común es dar formato a strings recibidos por inputs.
 ```java
-// example1
+// example 1
 String value = "10";
 int number = Integer.parseInt(value);
-// example2
+// example 2
 String value = "10.23";
 float number = Float.parseFloat(value);
 ```
