@@ -2,7 +2,7 @@
 
 ## Tabla de Contenido
 
-
+- [Introducción](#introduction)
 
 # 1. ¿Qué es Java?
 
@@ -17,39 +17,31 @@
     + Filosofía WORA (Write once run anywhere). Lo que aprendas en Java SE puedes llevarlo a Java EE y puede correr en cualquier SO.
 
 + **Java EE (Enterprise Edition)**
-    + Enfocado a apps web, en servidores y distribuidas.
+    + Enfocado a apps web en servidores y distribuidas.
 
 # 2. Versiones de Java y JDK
 
 ## 2.1. JDK (Java Development Kit)
 
-También nombrado como SDK de Java, se compone de 3 elementos:
+También conocido como SDK de Java, se compone de 3 elementos:
 
 + **JRE (Java Runtime Environment):** VM de Java que permite interpretar el código en distintos SO (filosofía WORA).
-+ **Compilador Java:** traduce Java a `Byte Code` que finalmente será interpretado por la `JVM`.
++ **Compilador Java:** traduce `Java` a `Byte Code` que finalmente será interpretado por la `JVM`.
 + **API de Desarrollo:** base de elementos y clases listas para usar.
 
 ## 2.2. Versiones
 
-+ Java SE 8 LTS (2014)
-+ Java SE 11 LTS (2018)
-
-LTS (Long Term Support / 3 years)
-
-
-+ Java SE 11 (JDK 11) es la primera versión en la que se cobra licencia.
-+ JDK de Oracle FREE solo en ambientes de desarrollo y testing.
-
-+ **OpenJDK:** 
-    + versión open-source de Java SE. 
-    + disponible desde Java SE 6.
-    + apoyada por Red Hat.
-
-La versión 8 es la más utilizada y es la única versión LTS con licencia gratuita (soporte) por parte de Oracle. Y apartir de ahí el soporte se adquirirá con licencia como en la versión 11 LTS.
++ Existen dos versiones LTS:
+    + Java SE 8 LTS (2014).
+    + Java SE 11 LTS (2018).
++ LTS (Long Term Support) en Java consiste en soporte de hasta 3 años aproximadamente.
++ Java SE 11 (JDK 11) es la primera versión en la que se cobra licencia. El JDK 11 de Oracle es gratuito solo en ambientes de desarrollo y testing.
++ Desde la versión 6 existe un JDK open-souce ([OpenJDK](#)) mantenido por la comunidad.
++ La versión 8 es la más utilizada y es la única versión LTS con licencia gratuita (soporte) por parte de Oracle. Este soporte gratuito es hasta fines de 2020 y a apartir de ahí el soporte se adquirirá con licencia pagada como en la versión 11 LTS.
 
 # 3. Herramientas 
 
-## Herramientas para proyectos Web
+## 3.1. Herramientas para proyectos Web
 
 Integración de dependencias:
 + Maven
@@ -61,45 +53,44 @@ Frameworks Java EE:
 ORMs:
 + Hibernate
 
-## IDEs
+## 3.2. IDEs
+
 + Netbeans
 + Eclipse
 + IntelliJ IDEA (más usado)
 + Replit (online)
 
-## Entorno de Desarrollo en Windows
+## 3.3. Entorno de Desarrollo en Windows
 
 1. Descargar e instalar [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/).
-
 2. Descargar e instalar las versiones LTS 8 y 11 de [OpenJDK](https://adoptopenjdk.net).
+3. Crear un nuevo proyecto y en la opción`Project SDK` seleccionar la versión deseada (ubicada en el directorio `C:\Program Files\AdoptOpenJDK`).
 
-3. Crear un nuevo proyecto y en `Project SDK` seleccionar la versión deseada (ubicada en el directorio `C:\Program Files\AdoptOpenJDK`).
 
-# 4. Código
+# 4. Programación
 
-**main:** punto de entrada de nuestra app en Java. Lo primero que se ejecuta cuando nuestra app corre.
+## 4.1. Iniciando con Java
+
++ El método `main` es el punto de entrada de nuestra app. Es lo primero que se ejecuta cuando nuestra app corre.
 
 ```java
 public static void main (String[] args){
     // acciones
 }
 ```
-
-+ En external libraries podemos ver las librerías con las que estamos trabajando, incluyendo el JDK.
++ En `external libraries` podemos ver las librerías con las que estamos trabajando, incluyendo el JDK.
 + En el directorio `src` es donde creamos nuestros archivos.
-Ejemplo: `New` > `Java Class`.
+    + Crear una clase: `New` > `Java Class`.
+    + Ejecutar la app: dar click derecho y seleccionar la opción `Run MyClass.main()`.
 
-Si escribimos `main` el IDE sugiere toda la estructura del método main.
+## 4.2. Atajos en IntelliJ IDEA
 
-Atajos/hacks/accesos directos:
-+ si escribimos `sout` y damos enter el IDE automáticamente pondrá el método de impresión ``System.out.println();`.
++ Si escribimos `main` el IDE sugiere toda la estructura del método main.
++ Si escribimos `sout` y damos enter el IDE automáticamente pondrá el método de impresión ``System.out.println();`.
 + Para sugerencias se presiona `CTRL + SPACE` en WIndows.
-+ más atajos: https://programatutos.com/tips/atajos-de-netbeans-para-java/
++ Más atajos en el siguiente [link](https://programatutos.com/tips/atajos-de-netbeans-para-java/).
 
-Para correr la app damos click derecho y seleccionamos la opción `Run HolaMundo.main()`.
-+ El IDE construye todo el programa.
-
-# Etapas de Programación en Java
+## 4.3. Etapas de Programación en Java
 
 + Escribimos código `.java`.
 + Cuando ejecutamos `run` se activa el compilador de Java `javac` que traduce el código a `Byte Code`. Este `Byte Code` es almacenado en archivos `.class` en el directorio `out`.
@@ -107,46 +98,40 @@ Para correr la app damos click derecho y seleccionamos la opción `Run HolaMundo
 
 > Java es compilado e interpretado.
 
-# Variables en Java
+## 4.4. Variables en Java
 
++ Declaración de variables:
 ```java
 int salary;
 String name, surname;
 ```
-+ No se puede inicializar una variable con un número al principio y no pueden tener guión medio.
++ No se puede inicializar una variable con un número al comienzo y no pueden tener guión medio `-`.
 + Constantes se escriben en mayúsculas y pueden contener `_`.
-
-Ejemplo de declaración de constante:
++ Declaración de una constante:
 ```java
-final double PI = 3.14;
+final double MAX_WIDTH = 45.15;
 ```
-
-Variables estáticas o de clase
-
-
-Concatenar strings:
++ Concatenar strings:
 ```java
 String name = "Cristian";
 name += " Flores";
 ```
 
-# Nombramiento
+## 4.5. Nombramiento
 
-+ **Upper Camel Case** en clases y estas deben tener el mismo nombre que los archivos.
-+ **Lower Camel Case** en variables y métodos.
++ **Upper Camel Case:** en clases y deben tener el mismo nombre que los archivos.
++ **Lower Camel Case:** en variables y métodos.
 
-## Variables númericas
+## 4.6. Variables númericas
 
-Las variables tienen limites.
-
-byte -128 a 127 (1 bye)
-short -32.768 a 32.767 (2 byte)
-int -2.147.483.648 a 2.147.483.647 (4 bytes)
-long -9.223.372.036.854.775.808 a -9.223.372.036.854.775.807 (8 bytes)
-
-Decimales
-float (4 bytes)
-double (8 bytes)
+| Tipo   |  Rango                                                  | Tamaño  | 
+|--------|---------------------------------------------------------|---------|
+| byte   | -128 a 127                                              | 1 byte  |
+| short  | -32.768 a 32.767                                        | 2 byte  |
+| int    | -2.147.483.648 a 2.147.483.647                          | 4 bytes |
+| long   | -9.223.372.036.854.775.808 a -9.223.372.036.854.775.807 | 8 bytes |
+| float  |  decimal                                                | 4 bytes |
+| double |  decimal                                                | 8 bytes |
 
 + Para especificar tipo de dato `long` se debe poner una `L` al final:
 ```java
@@ -154,30 +139,31 @@ long longNum = 12345678901L;
 ```
 + Para especificar tipo de dato `float` se debe poner una `F` al final:
 ```java
-float doubleNum = 123.456;
+double doubleNum = 123.456;
 float floatNum = 123.456F;
 ```
 
-Declarar tipos de datos sin signo para expandir sus limites.
+## 4.7. Declarar tipos de datos sin signo
+
+Esto permite expandir el rango de los valores positivos.
 ```java
 int intNum = Integer.parseUnsignedInt("4294967295");
 long longNum = Long.parseUnsignedLong("18446744073709551615");
 ```
 
-Tipos de datos
-char un carácter 2 bytes
-+ se utiliza con comillas simples.
 
-| boolean | true / false| 2 bytes |
-Desde Java 10 no es necesario establecer el tipo de variable y se puede poner var
+| char    | 'a'          | 2 bytes |
+| boolean | true / false | 2 bytes |
+
++ Desde Java 10, se puede usar `var` para que este infiera el tipo de variable sin ser especificada.
 ```java
 var intNum = 23455;
 ```
 
 
-## Cast vs Parse
+## 4.8. Cast vs Parse
 
-**Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
++ **Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
 ```java
 // option 1
 float num = 2.5f;
@@ -185,7 +171,7 @@ float num = 2.5f;
 float value = (float) 2.5;
 ```
 
-**Parse:** para cambiar entre tipos. Su uso más común es dar formato a strings recibidos por inputs.
++ **Parse:** para cambiar entre tipos. Su uso más común es dar formato a strings recibidos por inputs.
 ```java
 // example 1
 String value = "10";
@@ -195,9 +181,9 @@ String value = "10.23";
 float number = Float.parseFloat(value);
 ```
 
-# Operadores
+## 4.9. Operadores
 
-## Operadores de Asignación
++ Operadores de Asignación:
 
 | Operador | Aplicación | Desglose  |
 |----------|------------|-----------|
@@ -207,7 +193,7 @@ float number = Float.parseFloat(value);
 | /=       | a /= b     | a = a / b |
 | %=       | a %= b     | a = a % b | 
 
-## Operadores de Incremento y Decremento
++ Operadores de Incremento y Decremento:
 
 | Operador | Ejemplo | Desglose  |
 |----------|---------|-----------|
