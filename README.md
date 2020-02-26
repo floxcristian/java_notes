@@ -64,7 +64,7 @@ ORMs:
 
 1. Descargar e instalar [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/).
 2. Descargar e instalar las versiones LTS 8 y 11 de [OpenJDK](https://adoptopenjdk.net).
-3. Crear un nuevo proyecto y en la opción`Project SDK` seleccionar la versión deseada (ubicada en el directorio `C:\Program Files\AdoptOpenJDK`).
+3. Crear un nuevo proyecto y en la opción `Project SDK` seleccionar la versión deseada (ubicada en el directorio `C:\Program Files\AdoptOpenJDK`).
 
 
 # 4. Programación
@@ -94,16 +94,16 @@ public static void main (String[] args){
 
 + Escribimos código `.java`.
 + Cuando ejecutamos `run` se activa el compilador de Java `javac` que traduce el código a `Byte Code`. Este `Byte Code` es almacenado en archivos `.class` en el directorio `out`.
-+ La `JVM` interpreta el `Byte Code`.
++ Finalmente la `JVM` interpreta el `Byte Code`.
 
 > Java es compilado e interpretado.
 
-## 4.4. Variables en Java
+# 5. Variables en Java
 
 + Declaración de variables:
 ```java
 int salary;
-String name, surname;
+String name, surname = "Flores";
 ```
 + No se puede inicializar una variable con un número al comienzo y no pueden tener guión medio `-`.
 + Constantes se escriben en mayúsculas y pueden contener `_`.
@@ -117,12 +117,13 @@ String name = "Cristian";
 name += " Flores";
 ```
 
-## 4.5. Nombramiento
+## 5.1. Nombramiento
 
 + **Upper Camel Case:** en clases y deben tener el mismo nombre que los archivos.
 + **Lower Camel Case:** en variables y métodos.
 
-## 4.6. Variables númericas
+
+## 5.2. Variables númericas
 
 | Tipo   |  Rango                                                  | Tamaño  | 
 |--------|---------------------------------------------------------|---------|
@@ -142,8 +143,19 @@ long longNum = 12345678901L;
 double doubleNum = 123.456;
 float floatNum = 123.456F;
 ```
+## 5.3. Otros tipos de variables
 
-## 4.7. Declarar tipos de datos sin signo
+| Tipo    | Uso          | Tamaño  |
+|---------|--------------|---------|
+| char    | 'a'          | 2 bytes |
+| boolean | true / false | 2 bytes |
+
++ Desde Java 10 se puede usar `var` para que este infiera el tipo de variable sin ser especificada.
+```java
+var intNum = 23455;
+```
+
+## 5.4. Declarar tipos de datos sin signo
 
 Esto permite expandir el rango de los valores positivos.
 ```java
@@ -151,17 +163,7 @@ int intNum = Integer.parseUnsignedInt("4294967295");
 long longNum = Long.parseUnsignedLong("18446744073709551615");
 ```
 
-
-| char    | 'a'          | 2 bytes |
-| boolean | true / false | 2 bytes |
-
-+ Desde Java 10, se puede usar `var` para que este infiera el tipo de variable sin ser especificada.
-```java
-var intNum = 23455;
-```
-
-
-## 4.8. Cast vs Parse
+## 5.5. Cast vs Parse
 
 + **Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
 ```java
@@ -181,7 +183,7 @@ String value = "10.23";
 float number = Float.parseFloat(value);
 ```
 
-## 4.9. Operadores
+## 5.6. Operadores
 
 + Operadores de Asignación:
 
