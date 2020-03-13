@@ -29,6 +29,8 @@ También conocido como SDK de Java, se compone de 3 elementos:
 + **Compilador Java:** traduce `Java` a `Byte Code` que finalmente será interpretado por la `JVM`.
 + **API de Desarrollo:** base de elementos y clases listas para usar.
 
+Es una colección de programas para ayudar a los programadores a compilar, ejecutar y depurar programas escritos en Java.
+
 ## 2.2. Versiones
 
 + Existen dos versiones LTS:
