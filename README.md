@@ -162,8 +162,84 @@ Esto permite expandir el rango de los valores positivos.
 int intNum = Integer.parseUnsignedInt("4294967295");
 long longNum = Long.parseUnsignedLong("18446744073709551615");
 ```
+## 5.6. Operadores
 
+### Operadores de Asignación:
+
+| Operador | Aplicación | Desglose  |
+|----------|------------|-----------|
+| +=       | a += b     | a = a + b |
+| -=       | a -= b     | a = a - b |
+| *=       | a *= b     | a = a * b |
+| /=       | a /= b     | a = a / b |
+| %=       | a %= b     | a = a % b | 
+
+### Operadores de Incremento y Decremento:
+
+| Operador | Ejemplo | Desglose  |
+|----------|---------|-----------|
+| ++       | i++     | i = i + 1 |
+| --       | i--     | i = i - 1 |
+
+Podemos usar estos operadores de forma prefija `++i` o postfija `i++`. La diferencia está en qué operación se ejecuta primero:
+
++ En postfijo se accede al valor de la variable y después la incrementa.
+```java
+    int lives = 3;
+    int gift1 = 100 + lives++; // 103
+    int gift2 = 100 + ++lives; // 104
+```
+
+## 5.7. Operaciones Matemáticas
+
+Math es una clase de Java que nos ayuda a ejecutar diferentes operaciones matemáticas:
+```java
+Math.PI // 3.141592653589793
+Math.E // 2.718281828459045
+
+Math.ceil(2.1) // 3.0 (redondear hacia arriba)
+Math.floor(2.1) // 2.0 (redondear hacia abajo)
+
+Math.pow(2, 3) // 8.0 (número elevado a una potencia)
+Math.sqrt(3) // 1.73... (raíz cuadrada)
+
+Math.max(2, 3) // 3.0 (el número más grande)
+
+// área de un círculo (PI * r^2):
+Math.PI * Math.pow(r, 2)
+
+// área de una esfera (4 * PI * r^2):
+4 * Math.PI * Math.pow(r, 2)
+
+// volumen de una esfera ( (4/3) * PI * r^3):
+(4/3) * Math.PI * Math.pow(r, 3)
+```
+
+
+## Cast en Variables
 ## 5.5. Cast vs Parse
+
+En la programación hay situaciones donde necesitamos cambiar el tipo de dato de nuestras variables, esto lo conocemos como Cast.
+
+### Estimación:
+
+```java
+double monthlyDogs = dogsQuantity / 12.0; // 2.5 (pero no es posible, ¡no rescatamos medio perrito!)
+int estimatedMonthlyDogs = (int) monthlyDogs; // 2 (trunca el valor)
+
+// El casteo no redondea, solo quita los decimales (trunca):
+Math.sqrt(3) // 1.7320508075688772
+(int) Math.sqrt(3) // 1
+```
+
+### Exactitud:
+```java
+int a = 30;
+int b = 12;
+
+a / b // 2 (valor no exacto)
+(double) a / b // 2.5 (casting)
+```
 
 + **Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
 ```java
@@ -181,32 +257,4 @@ int number = Integer.parseInt(value);
 // example 2
 String value = "10.23";
 float number = Float.parseFloat(value);
-```
-
-## 5.6. Operadores
-
-+ Operadores de Asignación:
-
-| Operador | Aplicación | Desglose  |
-|----------|------------|-----------|
-| +=       | a += b     | a = a + b |
-| -=       | a -= b     | a = a - b |
-| *=       | a *= b     | a = a * b |
-| /=       | a /= b     | a = a / b |
-| %=       | a %= b     | a = a % b | 
-
-+ Operadores de Incremento y Decremento:
-
-| Operador | Ejemplo | Desglose  |
-|----------|---------|-----------|
-| ++       | i++     | i = i + 1 |
-| --       | i--     | i = i - 1 |
-
-Prefijo: 
-```java
-++i
-```
-Postfijo: 
-```java
-i++
 ```
