@@ -29,6 +29,8 @@ También conocido como SDK de Java, se compone de 3 elementos:
 + **Compilador Java:** traduce `Java` a `Byte Code` que finalmente será interpretado por la `JVM`.
 + **API de Desarrollo:** base de elementos y clases listas para usar.
 
+Es una colección de programas para ayudar a los programadores a compilar, ejecutar y depurar programas escritos en Java.
+
 ## 2.2. Versiones
 
 + Existen dos versiones LTS:
@@ -82,13 +84,6 @@ public static void main (String[] args){
 + En el directorio `src` es donde creamos nuestros archivos.
     + Crear una clase: `New` > `Java Class`.
     + Ejecutar la app: dar click derecho y seleccionar la opción `Run MyClass.main()`.
-
-## 4.2. Atajos en IntelliJ IDEA
-
-+ Si escribimos `main` el IDE sugiere toda la estructura del método main.
-+ Si escribimos `sout` y damos enter el IDE automáticamente pondrá el método de impresión ``System.out.println();`.
-+ Para sugerencias se presiona `CTRL + SPACE` en WIndows.
-+ Más atajos en el siguiente [link](https://programatutos.com/tips/atajos-de-netbeans-para-java/).
 
 ## 4.3. Etapas de Programación en Java
 
@@ -183,7 +178,8 @@ long longNum = Long.parseUnsignedLong("18446744073709551615");
 
 Podemos usar estos operadores de forma prefija `++i` o postfija `i++`. La diferencia está en qué operación se ejecuta primero:
 
-+ En postfijo se accede al valor de la variable y después la incrementa.
++ En prefijo se incrementa el valor de la variable y luego se accede a ella.
++ En postfijo se accede al valor de la variable y luego se incrementa.
 ```java
     int lives = 3;
     int gift1 = 100 + lives++; // 103
@@ -217,7 +213,6 @@ Math.PI * Math.pow(r, 2)
 
 
 ## Cast en Variables
-## 5.5. Cast vs Parse
 
 En la programación hay situaciones donde necesitamos cambiar el tipo de dato de nuestras variables, esto lo conocemos como Cast.
 
