@@ -21,6 +21,8 @@ Math.sqrt(3) // 1.7320508075688772
 ```
 
 ## Exactitud:
+
+Resultado exacto de una división:
 ```java
 int a = 30;
 int b = 12;
@@ -28,7 +30,7 @@ int b = 12;
 a / b // 2 (valor no exacto)
 (double) a / b // 2.5 (casting)
 ```
-
+Definir una variable flotante:
 ```java
 // option 1
 float num = 2.5f;
