@@ -157,7 +157,7 @@ Esto permite expandir el rango de los valores positivos.
 int intNum = Integer.parseUnsignedInt("4294967295");
 long longNum = Long.parseUnsignedLong("18446744073709551615");
 ```
-## 5.6. Operadores
+## 5.5. Operadores
 
 ### Operadores de Asignación:
 
@@ -186,7 +186,7 @@ Podemos usar estos operadores de forma prefija `++i` o postfija `i++`. La difere
     int gift2 = 100 + ++lives; // 104
 ```
 
-## 5.7. Operaciones Matemáticas
+## 5.6. Operaciones Matemáticas
 
 Math es una clase de Java que nos ayuda a ejecutar diferentes operaciones matemáticas:
 ```java
@@ -209,47 +209,4 @@ Math.PI * Math.pow(r, 2)
 
 // volumen de una esfera ( (4/3) * PI * r^3):
 (4/3) * Math.PI * Math.pow(r, 3)
-```
-
-
-## Cast en Variables
-
-En la programación hay situaciones donde necesitamos cambiar el tipo de dato de nuestras variables, esto lo conocemos como Cast.
-
-### Estimación:
-
-```java
-double monthlyDogs = dogsQuantity / 12.0; // 2.5 (pero no es posible, ¡no rescatamos medio perrito!)
-int estimatedMonthlyDogs = (int) monthlyDogs; // 2 (trunca el valor)
-
-// El casteo no redondea, solo quita los decimales (trunca):
-Math.sqrt(3) // 1.7320508075688772
-(int) Math.sqrt(3) // 1
-```
-
-### Exactitud:
-```java
-int a = 30;
-int b = 12;
-
-a / b // 2 (valor no exacto)
-(double) a / b // 2.5 (casting)
-```
-
-+ **Cast:** en operaciones matemáticas para garantizar precisión de las mismas, o ahorrar memoria optimizando los tipos.
-```java
-// option 1
-float num = 2.5f;
-// option 2
-float value = (float) 2.5;
-```
-
-+ **Parse:** para cambiar entre tipos. Su uso más común es dar formato a strings recibidos por inputs.
-```java
-// example 1
-String value = "10";
-int number = Integer.parseInt(value);
-// example 2
-String value = "10.23";
-float number = Float.parseFloat(value);
 ```
